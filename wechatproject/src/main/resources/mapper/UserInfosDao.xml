@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.forwechat.wechatproject.dao.UserInfosDao">
+    <!--auto generated Code-->
+    <resultMap id="BaseResultMap" type="com.forwechat.wechatproject.pojo.UserInfos">
+        <result column="id" property="id" jdbcType="BIGINT"/>
+        <result column="user_name" property="userName" jdbcType="VARCHAR"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="telephone" property="telephone" jdbcType="VARCHAR"/>
+        <result column="pass_word" property="passWord" jdbcType="VARCHAR"/>
+        <result column="email" property="email" jdbcType="VARCHAR"/>
+        <result column="stat" property="stat" jdbcType="BIGINT"/>
+        <result column="sex" property="sex" jdbcType="VARCHAR"/>
+        <result column="login_ip" property="loginIp" jdbcType="VARCHAR"/>
+        <result column="login_time" property="loginTime" jdbcType="TIMESTAMP"/>
+        <result column="address" property="address" jdbcType="VARCHAR"/>
+        <result column="identity_card" property="identityCard" jdbcType="VARCHAR"/>
+        <result column="identity_card_address" property="identityCardAddress" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="Base_Column_List">
+        id,
+        user_name,
+        name,
+        telephone,
+        pass_word,
+        email,
+        stat,
+        sex,
+        login_ip,
+        login_time,
+        address,
+        identity_card,
+        identity_card_address
+    </sql>
+
+    <!--auto generated Code-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="userInfos.id">
+        INSERT INTO user_infos (
+            id,
+            user_name,
+            name,
+            telephone,
+            pass_word,
+            email,
+            stat,
+            sex,
+            login_ip,
+            login_time,
+            address,
+            identity_card,
+            identity_card_address
+        ) VALUES (
+            #{userInfos.id,jdbcType=BIGINT},
+            #{userInfos.userName,jdbcType=VARCHAR},
+            #{userInfos.name,jdbcType=VARCHAR},
+            #{userInfos.telephone,jdbcType=VARCHAR},
+            #{userInfos.passWord,jdbcType=VARCHAR},
+            #{userInfos.email,jdbcType=VARCHAR},
+            #{userInfos.stat,jdbcType=BIGINT},
+            #{userInfos.sex,jdbcType=VARCHAR},
+            #{userInfos.loginIp,jdbcType=VARCHAR},
+            #{userInfos.loginTime,jdbcType=TIMESTAMP},
+            #{userInfos.address,jdbcType=VARCHAR},
+            #{userInfos.identityCard,jdbcType=VARCHAR},
+            #{userInfos.identityCardAddress,jdbcType=VARCHAR}
+        )
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="userInfos.id">
+        INSERT INTO user_infos
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userInfos.id!=null"> id,</if>
+            <if test="userInfos.userName!=null"> user_name,</if>
+            <if test="userInfos.name!=null"> name,</if>
+            <if test="userInfos.telephone!=null"> telephone,</if>
+            <if test="userInfos.passWord!=null"> pass_word,</if>
+            <if test="userInfos.email!=null"> email,</if>
+            <if test="userInfos.stat!=null"> stat,</if>
+            <if test="userInfos.sex!=null"> sex,</if>
+            <if test="userInfos.loginIp!=null"> login_ip,</if>
+            <if test="userInfos.loginTime!=null"> login_time,</if>
+            <if test="userInfos.address!=null"> address,</if>
+            <if test="userInfos.identityCard!=null"> identity_card,</if>
+            <if test="userInfos.identityCardAddress!=null"> identity_card_address,</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userInfos.id!=null">#{userInfos.id,jdbcType=BIGINT},
+            </if>
+            <if test="userInfos.userName!=null">#{userInfos.userName,jdbcType=VARCHAR},
+            </if>
+            <if test="userInfos.name!=null">#{userInfos.name,jdbcType=VARCHAR},
+            </if>
+            <if test="userInfos.telephone!=null">#{userInfos.telephone,jdbcType=VARCHAR},
+            </if>
+            <if test="userInfos.passWord!=null">#{userInfos.passWord,jdbcType=VARCHAR},
+            </if>
+            <if test="userInfos.email!=null">#{userInfos.email,jdbcType=VARCHAR},
+            </if>
+            <if test="userInfos.stat!=null">#{userInfos.stat,jdbcType=BIGINT},
+            </if>
+            <if test="userInfos.sex!=null">#{userInfos.sex,jdbcType=VARCHAR},
+            </if>
+            <if test="userInfos.loginIp!=null">#{userInfos.loginIp,jdbcType=VARCHAR},
+            </if>
+            <if test="userInfos.loginTime!=null">#{userInfos.loginTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="userInfos.address!=null">#{userInfos.address,jdbcType=VARCHAR},
+            </if>
+            <if test="userInfos.identityCard!=null">#{userInfos.identityCard,jdbcType=VARCHAR},
+            </if>
+            <if test="userInfos.identityCardAddress!=null">#{userInfos.identityCardAddress,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO user_infos (
+        <include refid="Base_Column_List"/>
+        )VALUES
+        <foreach collection="userInfoss" item="userInfos" index="index" separator=",">
+            (
+            #{userInfos.id,jdbcType=BIGINT},
+            #{userInfos.userName,jdbcType=VARCHAR},
+            #{userInfos.name,jdbcType=VARCHAR},
+            #{userInfos.telephone,jdbcType=VARCHAR},
+            #{userInfos.passWord,jdbcType=VARCHAR},
+            #{userInfos.email,jdbcType=VARCHAR},
+            #{userInfos.stat,jdbcType=BIGINT},
+            #{userInfos.sex,jdbcType=VARCHAR},
+            #{userInfos.loginIp,jdbcType=VARCHAR},
+            #{userInfos.loginTime,jdbcType=TIMESTAMP},
+            #{userInfos.address,jdbcType=VARCHAR},
+            #{userInfos.identityCard,jdbcType=VARCHAR},
+            #{userInfos.identityCardAddress,jdbcType=VARCHAR}
+            )
+        </foreach>
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="update">
+        UPDATE user_infos
+        <set>
+            <if test="userInfos.id != null"> id= #{userInfos.id,jdbcType=BIGINT},</if>
+            <if test="userInfos.userName != null"> user_name= #{userInfos.userName,jdbcType=VARCHAR},</if>
+            <if test="userInfos.name != null"> name= #{userInfos.name,jdbcType=VARCHAR},</if>
+            <if test="userInfos.telephone != null"> telephone= #{userInfos.telephone,jdbcType=VARCHAR},</if>
+            <if test="userInfos.passWord != null"> pass_word= #{userInfos.passWord,jdbcType=VARCHAR},</if>
+            <if test="userInfos.email != null"> email= #{userInfos.email,jdbcType=VARCHAR},</if>
+            <if test="userInfos.stat != null"> stat= #{userInfos.stat,jdbcType=BIGINT},</if>
+            <if test="userInfos.sex != null"> sex= #{userInfos.sex,jdbcType=VARCHAR},</if>
+            <if test="userInfos.loginIp != null"> login_ip= #{userInfos.loginIp,jdbcType=VARCHAR},</if>
+            <if test="userInfos.loginTime != null"> login_time= #{userInfos.loginTime,jdbcType=TIMESTAMP},</if>
+            <if test="userInfos.address != null"> address= #{userInfos.address,jdbcType=VARCHAR},</if>
+            <if test="userInfos.identityCard != null"> identity_card= #{userInfos.identityCard,jdbcType=VARCHAR},</if>
+            <if test="userInfos.identityCardAddress != null"> identity_card_address= #{userInfos.identityCardAddress,jdbcType=VARCHAR}</if>
+        </set>
+        WHERE id = #{userInfos.id,jdbcType=BIGINT}
+    </update>
+
+    <select id="list" resultMap="BaseResultMap">
+        SELECT * from user_infos;
+    </select>
+
+    <select id="selectByUserName" resultMap="BaseResultMap">
+        SELECT * from user_infos mm where mm.user_name=#{userName};
+    </select>
+</mapper>
+
