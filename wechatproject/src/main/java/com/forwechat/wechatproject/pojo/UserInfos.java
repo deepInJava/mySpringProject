@@ -1,9 +1,12 @@
 package com.forwechat.wechatproject.pojo;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
 
-public class UserInfo implements Serializable {
+@Data
+public class UserInfos implements Serializable {
     private Long id;//主键
     private String userName;//系统名称
     private String name;//真实名称
