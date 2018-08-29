@@ -18,5 +18,5 @@ public interface UserInfosDao {
 
     List<UserInfos> list();
 
-    UserInfos selectByUserName(String userName);
+    UserInfos selectByUserName(@Param("userName") String userName);
 }
